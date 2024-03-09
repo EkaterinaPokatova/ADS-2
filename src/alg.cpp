@@ -4,22 +4,22 @@
 
 
 double pown(double value, uint16_t n) {
-    double result = 1.0;
+    double presult = 1.0;
     if (n == 0) {
         return 1;
     }
     for (uint64_t i = 1; i <= n; i++) {
-        result = result * value;
+        presult = presult * value;
     }
-    return result;
+    return presult;
 }
 
 uint64_t fact(uint16_t n) {
-    uint64_t result = 1;
+    uint64_t fresult = 1;
     for (uint64_t i = 1; i <= n; i++) {
-        result *= i;
+        fresult *= i;
     }
-    return result;
+    return fresult;
 }
 
 double calcItem(double x, uint16_t n) {
@@ -27,25 +27,25 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double result = 1.0;
+    double eresult = 1.0;
     for (uint64_t i = 1; i <= count; i++) {
-        result += calcItem(x, i);
+        eresult += calcItem(x, i);
     }
-    return result;
+    return eresult;
 }
 
 double sinn(double x, uint16_t count) {
-    double result = 0.0;
+    double sresult = 0.0;
     for (uint64_t i = 1; i <= count; i++) {
-        result += pown(-1, i - 1) * calcItem(x, (2 * i) - 1);
+        sresult += pown(-1, i - 1) * calcItem(x, (2 * i) - 1);
     }
-    return result;
+    return sresult;
 }
 
 double cosn(double x, uint16_t count) {
-    double result = 0.0;
+    double cresult = 0.0;
     for (uint64_t i = 1; i <= count; i++) {
-        result += pown(-1, i - 1) * calcItem(x, (2 * i) - 2);
+        cresult += pown(-1, i - 1) * calcItem(x, (2 * i) - 2);
     }
-    return result;
+    return cresult;
 }
